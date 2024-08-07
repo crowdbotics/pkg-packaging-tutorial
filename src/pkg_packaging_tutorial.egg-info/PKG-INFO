@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: pkg_packaging_tutorial
+Version: 0.0.1
+Summary: A simple tutorial for packaging python projects
+Author-email: Daniel Sousa <daniel.s@crowdbotics.com>
+Project-URL: Homepage, https://github.com/crowdbotics/packaging-tutorial
+Project-URL: Issues, https://github.com/crowdbotics/packaging-tutorial/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Packaging Tutorial
+
+This is a simple packaging tutorial for Python projects.
+
+```shell
+packaging-tutorial $ tree .
+.
+├── LICENSE
+├── README.md
+├── pyproject.toml
+└── src
+    └── packaging_tutorial
+        ├── hello.py
+        └── __init__.py
+```
+
+## Getting started
+
+```shell
+pip install --upgrade pip
+pip install --upgrade build
+```
+
+## Generate distribution archives
+
+```
+python -m build
+```
+
+You should have the `dist` directory generated with the following files:
+```shell
+packaging-tutorial $ tree .
+.
+├── dist
+│   ├── pkg_packaging_tutorial-0.0.1-py3-none-any.whl
+│   └── pkg_packaging_tutorial-0.0.1.tar.gz
+├── LICENSE
+├── README.md
+├── pyproject.toml
+└── src
+    ├── pkg-packaging-tutorial
+    │   ├── hello.py
+    │   └── __init__.py
+    └── pkg_packaging_tutorial.egg-info
+        ├── dependency_links.txt
+        ├── PKG-INFO
+        ├── SOURCES.txt
+        └── top_level.txt
+```
+
+## Uploading to our index
+
+```shell
+pip install --upgrade twine
+twine upload --repository-url http://pypi.localhost/packages/prod dist/* --username packages --password blank
+```
+
+## Using it in a project
+
+```shell
+pipenv install packaging-tutorial
+```

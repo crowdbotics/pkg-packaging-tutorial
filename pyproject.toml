@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pkg_packaging_tutorial"
+version = "0.0.1"
+authors = [
+  { name="Daniel Sousa", email="daniel.s@crowdbotics.com" },
+]
+description = "A simple tutorial for packaging python projects"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/crowdbotics/packaging-tutorial"
+Issues = "https://github.com/crowdbotics/packaging-tutorial/issues"
