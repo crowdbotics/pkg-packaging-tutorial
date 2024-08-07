@@ -1,0 +1,15 @@
+[[source]]
+url = "https://packages:${PKG_PASSWORD}@pkg.crowdbotics.com/pypi/packages/stable/+simple"
+verify_ssl = true
+name = "crowdbotics"
+
+[packages]
+pip = "*"
+build = "*"
+twine = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
+python_full_version = "3.12.1"
